@@ -8,6 +8,7 @@ import HeroImage from "./HeroImage";
 import Grid from "./Grid";
 import Thumb from "./Thumb";
 import Spinner from "./Spinner";
+import SearchBar from "./SearchBar";
 const Home = () => {
   const { state, loading, error } = useHomeFetch();
   console.log(state);
@@ -20,6 +21,8 @@ const Home = () => {
           text={state.results[0].overview}
         />
       )}
+
+      <SearchBar />
       <Grid header="Popular Movies">
         {state.results.map((movie) => (
           <Thumb
