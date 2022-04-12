@@ -7,6 +7,7 @@ import { useHomeFetch } from "../hooks/useHomeFetch";
 import HeroImage from "./HeroImage";
 import Grid from "./Grid";
 import Thumb from "./Thumb";
+import Spinner from "./Spinner";
 const Home = () => {
   const { state, loading, error } = useHomeFetch();
   console.log(state);
@@ -29,10 +30,11 @@ const Home = () => {
                 ? IMAGE_BASE_URL + POSTER_SIZE + movie.poster_path
                 : NoImage
             }
-            movieId={movie.id} 
+            movieId={movie.id}
           ></Thumb>
         ))}
       </Grid>
+      <Spinner />
     </>
   );
 };
