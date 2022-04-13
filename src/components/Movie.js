@@ -5,12 +5,20 @@ import { useMovieFetch } from "../hooks/useMovieFetch";
 //Image
 
 import NoImage from "../images/no_image.jpg";
+import BreadCumb from "./BreadCumb";
+import Spinner from "./Spinner";
 const Movie = () => {
   const { movieId } = useParams();
-  const { state: movie, loading, eror } = useMovieFetch(movieId);
+  const { state: movie, loading, error } = useMovieFetch(movieId);
 
-  console.log(movie);
-  return <>moie</>;
+  if (loading) return <Spinner />;
+  if (error) return <div>Something went wrong ...</div>;
+
+  return (
+    <>
+      <BreadCumb movieTitle={movie.original_title} /> 
+    </>
+  );
 };
 
 export default Movie;
