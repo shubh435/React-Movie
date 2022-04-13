@@ -9,6 +9,7 @@ import Grid from "./Grid";
 import Thumb from "./Thumb";
 import Spinner from "./Spinner";
 import SearchBar from "./SearchBar";
+import Button from "./Button";
 const Home = () => {
   const { state, loading, error, searchTerm, setSearchTerm } = useHomeFetch();
   console.log(state);
@@ -37,7 +38,11 @@ const Home = () => {
           ></Thumb>
         ))}
       </Grid>
-      <Spinner />
+      {loading && <Spinner />}
+
+      {state.page < state.total_pages && !loading && (
+        <Button text="Load More" />
+      )}
     </>
   );
 };
