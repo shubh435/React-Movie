@@ -11,8 +11,17 @@ import Spinner from "./Spinner";
 import SearchBar from "./SearchBar";
 import Button from "./Button";
 const Home = () => {
-  const { state, loading, error, searchTerm, setSearchTerm } = useHomeFetch();
-  console.log(state);
+  const {
+    state,
+    loading,
+    error,
+    searchTerm,
+    setSearchTerm,
+    setIsLoading,
+  } = useHomeFetch();
+
+  if (error) return <div>Something went wrong ...</div>;
+
   return (
     <>
       {!searchTerm && state.results[0] && (
@@ -41,7 +50,7 @@ const Home = () => {
       {loading && <Spinner />}
 
       {state.page < state.total_pages && !loading && (
-        <Button text="Load More" />
+        <Button text="Load More" callback={() => setIsLoading(true)} />
       )}
     </>
   );
