@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import API from "../API";
-import { isPersistedState } from "../helpers";
+// import { isPersistedState } from "../helpers";
 const initialState = {
   page: 0,
   results: [],
