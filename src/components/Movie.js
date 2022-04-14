@@ -6,6 +6,7 @@ import { useMovieFetch } from "../hooks/useMovieFetch";
 
 import NoImage from "../images/no_image.jpg";
 import BreadCumb from "./BreadCumb";
+import MovieInfo from "./MovieInfo";
 import Spinner from "./Spinner";
 const Movie = () => {
   const { movieId } = useParams();
@@ -16,7 +17,8 @@ const Movie = () => {
 
   return (
     <>
-      <BreadCumb movieTitle={movie.original_title} /> 
+      <BreadCumb movieTitle={movie.original_title} /> \
+      <MovieInfo movie={movie} />
     </>
   );
 };
