@@ -19,6 +19,10 @@ export const GlobalStyle = createGlobalStyle`
     font-family:'Abel',san-serif;
 
 }
+
+::-webkit-scrollbar{
+    width: 5px;
+}
 body{
     margin:0;
     padding:0;
