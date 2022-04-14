@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Content, Wrapper } from "./BreadCumb.styles";
-
+import PropTypes from "prop-types";
 const BreadCumb = ({ movieTitle }) => {
   return (
     <Wrapper>
@@ -17,4 +17,7 @@ const BreadCumb = ({ movieTitle }) => {
   );
 };
 
+BreadCumb.propTypes ={
+  movieTitle:PropTypes.string,
+}
 export default BreadCumb;
